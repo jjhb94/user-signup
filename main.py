@@ -39,7 +39,7 @@ form = """
                             <label for="Usrname">Username </label>
                         </td>
                         <td>
-                            <input type="text" id="usr_name" name="Username"/>
+                            <input type="text" id="usr_name" name="Username" required/>
                         </td>
                     </tr>
                     <tr>
