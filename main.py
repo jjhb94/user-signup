@@ -39,7 +39,8 @@ form = """
                             <label for="Usrname">Username </label>
                         </td>
                         <td>
-                            <input type="text" id="usr_name" name="Username" required/>
+                            <input type="text" id="usr_name" name="Username" 
+                                pattern="[A-Za-z0-9_.].{3,20} required/>
                         </td>
                     </tr>
                     <tr>
@@ -65,7 +66,8 @@ form = """
                             <label for "email_address">Email Address (optional): </label>
                         </td>
                         <td>
-                            <input type="text" id="email" name="Email Address"/>
+                            <input type="text" id="email" name="Email Address"
+                                pattern=".{3,20}"/>
                         </td>
                     </tr>
                 <tbody>
