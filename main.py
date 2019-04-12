@@ -39,17 +39,16 @@ form = """
                             <label for="Usrname">Username </label>
                         </td>
                         <td>
-                            <input type="text" id="usr_name" name="Username" 
-                                pattern="[A-Za-z0-9_.].{3,20} required/>
+                            <input type="text" id="usr_name" name="Username"/>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="passwd">Password (password must be between 3 and 20 characters): </label>
+                            <label for="passwd">Password (8 character minimum): </label>
                         </td>
                         <td>
                             <input type="password" id="passwd" name="Password"
-                                pattern=".{3,20}" required/>
+                                minlength="8" required/>
                         </td>
                     </tr>
                     <tr>
@@ -58,7 +57,7 @@ form = """
                         </td>
                         <td>
                             <input type="password" id="confirm_passwd" name="Confrim Password"
-                                pattern=".{3,20}" required/>
+                                minlength="8" required/>
                         </td>
                     </tr>
                     <tr>
@@ -66,8 +65,7 @@ form = """
                             <label for "email_address">Email Address (optional): </label>
                         </td>
                         <td>
-                            <input type="text" id="email" name="Email Address"
-                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z].{2,50}$"/>
+                            <input type="text" id="email" name="Email Address"/>
                         </td>
                     </tr>
                 <tbody>
