@@ -67,7 +67,7 @@ form = """
                         </td>
                         <td>
                             <input type="text" id="email" name="Email Address"
-                                pattern=".{3,20}"/>
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z].{2,50}$"/>
                         </td>
                     </tr>
                 <tbody>
