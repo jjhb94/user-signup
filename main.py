@@ -44,11 +44,11 @@ form = """
                     </tr>
                     <tr>
                         <td>
-                            <label for="passwd">Password (8 character minimum): </label>
+                            <label for="passwd">Password (password must be between 3 and 20 characters): </label>
                         </td>
                         <td>
                             <input type="password" id="passwd" name="Password"
-                                minlength="8" required/>
+                                pattern=".{3,20}" required/>
                         </td>
                     </tr>
                     <tr>
@@ -57,7 +57,7 @@ form = """
                         </td>
                         <td>
                             <input type="password" id="confirm_passwd" name="Confrim Password"
-                                minlength="8" required/>
+                                pattern=".{3,20}" required/>
                         </td>
                     </tr>
                     <tr>
