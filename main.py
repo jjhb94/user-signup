@@ -30,16 +30,17 @@ form = """
     </head>
     <body>
         <h1> Signup </h1>
-    <!-- put some stuff into here :) -->
-        <form method="post">
+    <!-- put some stuff into here :) :p -->
+        <form action="/hello" method="post" data-version="1.2">
             <table>
                 <tbody>
                     <tr>
                         <td>
-                            <label for="Usrname">Username </label>
+                            <label for="usr_name">Username </label>
                         </td>
                         <td>
-                            <input type="text" id="usr_name" name="Username"/>
+                            <input type="text" id="usr_name" name="User-name"
+                                minlength="3" maxlength="20" required/>
                         </td>
                     </tr>
                     <tr>
@@ -48,7 +49,7 @@ form = """
                         </td>
                         <td>
                             <input type="password" id="passwd" name="Password"
-                                minlength="8" required/>
+                                minlength="3" maxlength="20" required/>
                         </td>
                     </tr>
                     <tr>
@@ -56,8 +57,8 @@ form = """
                             <label for="confirm_passwd">Confirm Password </label>
                         </td>
                         <td>
-                            <input type="password" id="confirm_passwd" name="Confrim Password"
-                                minlength="8" required/>
+                            <input type="password" id="confirm_passwd" name="Confirm-Password"
+                                minlength="3" maxlength="20" required/>
                         </td>
                     </tr>
                     <tr>
@@ -65,10 +66,10 @@ form = """
                             <label for "email_address">Email Address (optional): </label>
                         </td>
                         <td>
-                            <input type="text" id="email" name="Email Address"/>
+                            <input type="text" id="email_address" name="Email-Address"/>
                         </td>
                     </tr>
-                <tbody>
+                </tbody>
             </table>
             <input type="submit" name="submit query" />
         </form>
@@ -78,16 +79,27 @@ form = """
 
 @app.route("/")
 def index():
-    return form.format('')
+    return form
 
-@app.route("/", methods=['POST'])
-def encrypt():
-    rot = request.form["rot"] #this takes the number field and converts it into int
-    text = request.form["text"] # this takes what is is the text box and passes it to the the variable 
 
-    new_message = rotate_string(text, int(rot))  # this calls the rotate_string function from Caesar and passes text and rot as parameters
-    encrypted_message =  new_message # this prints the returned value after the function manipulates the parameters above
+
+@app.route("/hello", methods=['POST'])
+def hello():
+    email_name = ""
+    user_name = request.form["User-name"] #this takes the number field and converts it into int
+    user_password = request.form["Password"] # this takes what is is the text box and passes it to the the variable 
+    confirm_password = request.form["Confirm-Password"]
+    
+    if user_password == confirm_password:
+        return '<h1> Welcome, ' + user_name +'</h1>'
+    else:
+        return '<h1> Passwords do not match, please try again </h1>'
+    
+
+    # this calls the rotate_string function from Caesar and passes text and rot as parameters
+     # this prints the returned value after the function manipulates the parameters above
 
     # return encrypted_message  # make sure to return your final variable every time or else it will not do anything. 
-    return form.format(encrypted_message) # we do this so that way we can pass an arbitrary value back to {0} as a place holder. 
+     # we do this so that way we can pass an arbitrary value back to {0} as a place holder. 
+     
 app.run()
