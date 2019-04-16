@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <h1><strong>User Signup</strong></h1>
+    <form action="/user" method="post" >
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        
+                            <label for="usr_name">Username </label>
+                            <input type="text" id="usr_name" name="User-name"
+                            minlength="3" maxlength="20" required/>
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="passwd">Password (8 character minimum): </label>
+                    </td>
+                    <td>
+                        <input type="password" id="passwd" name="Password"
+                            minlength="3" maxlength="20" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="confirm_passwd">Confirm Password </label>
+                    </td>
+                    <td>
+                        <input type="password" id="confirm_passwd" name="Confirm-Password"
+                            minlength="3" maxlength="20" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email_address">Email Address (optional): </label>
+                    </td>
+                    <td>
+                        <input type="text" id="email_address" name="Email-Address"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="submit" name="submit query" />
+    </form>
+    {% endblock %}
