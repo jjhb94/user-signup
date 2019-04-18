@@ -9,7 +9,7 @@
                         
                             <label for="usr_name">Username </label>
                             <input type="text" id="usr_name" name="User-name"
-                            minlength="3" maxlength="20" required/>
+                            minlength="3" maxlength="20" pattern="\S+" required/>
                     
                     </td>
                 </tr>
@@ -19,7 +19,7 @@
                     </td>
                     <td>
                         <input type="password" id="passwd" name="Password"
-                            pattern="[a-zA-Z0-9@#!].{3,20}"/>
+                            pattern="[\S+a-zA-Z0-9@#!].{3,20}" required/>
                     </td>
                 </tr>
                 <tr>
@@ -28,7 +28,7 @@
                     </td>
                     <td>
                         <input type="password" id="confirm_passwd" name="Confirm-Password"
-                            pattern="[a-zA-Z0-9@#!].{3,20}"/>
+                            pattern="[\S+a-zA-Z0-9@#!].{3,20}" required/>
                     </td>
                 </tr>
                 <tr>
