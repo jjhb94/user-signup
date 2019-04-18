@@ -14,11 +14,11 @@
                 </tr>
                 <tr>
                     <td>
-                        <label for="passwd">Password (8 character minimum): </label>
+                        <label for="passwd">Password (Between 3 and 20 characters): </label>
                     </td>
                     <td>
                         <input type="password" id="passwd" name="Password" 
-                            pattern="(?=.*\d@#)(?=.*[a-z])(?=.*[A-Z]).{3,20}"/>
+                            pattern="[a-zA-Z0-9@#!].{3,20}"/>
                         <span class="error">That's not a valid password</span>
                     </td>
                 </tr>
@@ -28,7 +28,7 @@
                     </td>
                     <td>
                         <input type="password" id="confirm_passwd" name="Confirm-Password"
-                            pattern="(?=.*\d@#)(?=.*[a-z])(?=.*[A-Z]).{3,20}"/>
+                            pattern="[a-zA-Z0-9@#!].{3,20}"/>
                         <span class="error">That's not a valid password</span>
                     </td>
                 </tr>
