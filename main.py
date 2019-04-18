@@ -16,7 +16,7 @@ def hello():
     confirm_password = request.form["Confirm-Password"]
     
     if user_password != confirm_password:
-        return '<h1> Passwords do not match, please try again </h1>'
+        return render_template("error.html") # this redirects to the same input page BUT with the error messages instead
     return render_template("add-confirmation.html", valid_credentials=user_name)#'<h1> Welcome, ' + user_name +'</h1>'
     
 
