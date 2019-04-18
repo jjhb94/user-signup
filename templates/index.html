@@ -15,11 +15,11 @@
                 </tr>
                 <tr>
                     <td>
-                        <label for="passwd">Password (8 character minimum): </label>
+                        <label for="passwd">Password (Between 3 and 20 characters): </label>
                     </td>
                     <td>
                         <input type="password" id="passwd" name="Password"
-                            minlength="3" maxlength="20" required/>
+                            pattern="[a-zA-Z0-9@#!].{3,20}"/>
                     </td>
                 </tr>
                 <tr>
@@ -28,7 +28,7 @@
                     </td>
                     <td>
                         <input type="password" id="confirm_passwd" name="Confirm-Password"
-                            minlength="3" maxlength="20" required/>
+                            pattern="[a-zA-Z0-9@#!].{3,20}"/>
                     </td>
                 </tr>
                 <tr>
@@ -36,7 +36,8 @@
                         <label for="email_address">Email Address (optional): </label>
                     </td>
                     <td>
-                        <input type="text" id="email_address" name="Email-Address"/>
+                        <input type="text" id="email_address" name="Email-Address"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
                     </td>
                 </tr>
             </tbody>

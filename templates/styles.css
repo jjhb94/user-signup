@@ -13,3 +13,7 @@ tbody {
     vertical-align: middle;
     border-color: inherit;
     }
+span.error{
+    color: red;
+    font-weight: bold;
+}
