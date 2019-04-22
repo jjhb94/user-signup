@@ -13,7 +13,7 @@ tbody {
     vertical-align: middle;
     border-color: inherit;
     }
-.error { 
+#error { 
     color: red;
     font-weight: bold;
 }

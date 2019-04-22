@@ -22,8 +22,9 @@ def validate():
     if (not user_name) or (' ' in user_name):
         username_error = 'That is not a valid username'
     if user_password != confirm_password:
+        password_does_not_match = 'passwords do not match'
         password_error = 'that is not a valid password'
-        return render_template('index.html', valid_credentials=user_name, invalid_credentials=username_error, invalid_password=password_error)
+        return render_template('index.html', valid_credentials=user_name, invalid_credentials=username_error, invalid_password=password_error, dont_match=password_does_not_match)
        
     else:
         return render_template("add-confirmation.html", valid_credentials=user_name)#'<h1> Welcome, ' + user_name +'</h1>'

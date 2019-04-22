@@ -9,7 +9,7 @@
                             <label for="usr_name">Username </label>
                             <input type="text" id="usr_name" name="User-name"
                             pattern="[\S+].{3,20}" value="{{valid_credentials}}"required/>
-                            <span class="error">{{invalid_credentials}}</span>
+                            <span id="error" class="error">{{invalid_credentials}}</span>
                     
                     </td>
                 </tr>
@@ -20,7 +20,7 @@
                     <td>
                         <input type="password" id="passwd" name="Password"
                             pattern="[\S+a-zA-Z0-9@#!].{3,20}" required/>
-                            <span class="error">{{invalid_password}}</span>
+                            <span id="error" class="error">{{invalid_password}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -30,7 +30,7 @@
                     <td>
                         <input type="password" id="confirm_passwd" name="Confirm-Password"
                             pattern="[\S+a-zA-Z0-9@#!].{3,20}" required/>
-                            <span class="error">{{invalid_password}}</span>
+                            <span id="error" class="error">{{dont_match}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -40,7 +40,7 @@
                     <td>
                         <input type="text" id="email_address" name="Email-Address"
                             pattern="[\S+a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,20}$"/>
-                            <span class="error">{{email_error}}</span>
+                            <span id="error" class="error">{{email_error}}</span>
                     </td>
                 </tr>
             </tbody>
