@@ -19,16 +19,14 @@ def validate():
     user_password = request.form["Password"] # this takes what is is the text box and passes it to the the variable 
     confirm_password = request.form["Confirm-Password"]
     
-    if (not user_name) or (not is_valid(user_name)) or (' ' in user_name):
+    if (not user_name) or (' ' in user_name):
         username_error = 'That is not a valid username'
-    if (not username_error):
-        if user_password != confirm_password:
-            password_error = 'that is not a valid password'
-        return render_template("add-confirmation.html", valid_credentials=user_name)#'<h1> Welcome, ' + user_name +'</h1>'
+    if user_password != confirm_password:
+        password_error = 'that is not a valid password'
+        return render_template('index.html', valid_credentials=user_name, invalid_credentials=username_error, invalid_password=password_error)
        
     else:
-        return render_template('index.html', valid_credentials=user_name, invalid_credentials=username_error)
-
+        return render_template("add-confirmation.html", valid_credentials=user_name)#'<h1> Welcome, ' + user_name +'</h1>'
 
 
 @app.route("/")
